@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovies;
+using RazorPagesMovies.Models;
+using RazorPagesMovies.Data;
 
 namespace RazorPagesMovies.Pages.Movies
 {
@@ -19,13 +21,31 @@ namespace RazorPagesMovies.Pages.Movies
         }
 
         public IList<Movie> Movie { get;set; } = default!;
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; } = string.Empty;
+        public SelectList? Genres { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public String MovieGenre { get; set; } = string.Empty;
 
         public async Task OnGetAsync()
         {
-            if (_context.Movie != null)
+            var movies = from m in _context.Movie
+                         select m;
+
+            IQueryable<string> genreQuery = from m in _context.Movie
+                                            orderby m.Genre
+                                            select m.Genre;
+
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                Movie = await _context.Movie.ToListAsync();
+                movies = movies.Where(s => s.Title.Contains(SearchString));
             }
+            if (!string.IsNullOrEmpty(MovieGenre))
+            {
+                movies = movies.Where(x => x.Genre == MovieGenre);
+            }
+            Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
+            Movie = await movies.ToListAsync();
         }
     }
 }

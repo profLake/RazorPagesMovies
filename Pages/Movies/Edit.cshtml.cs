@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovies;
+using RazorPagesMovies.Models;
+using RazorPagesMovies.Data;
 
 namespace RazorPagesMovies.Pages.Movies
 {
@@ -55,6 +56,7 @@ namespace RazorPagesMovies.Pages.Movies
             }
             catch (DbUpdateConcurrencyException)
             {
+                Console.WriteLine("EXCEPTION");
                 if (!MovieExists(Movie.ID))
                 {
                     return NotFound();

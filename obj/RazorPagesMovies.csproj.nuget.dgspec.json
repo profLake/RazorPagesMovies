@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\musli\\dev\\c#\\RazorPagesMovies\\RazorPagesMovies.csproj": {}
+    "/home/art/dev/c#/RazorPagesMovies/RazorPagesMovies.csproj": {}
   },
   "projects": {
-    "C:\\Users\\musli\\dev\\c#\\RazorPagesMovies\\RazorPagesMovies.csproj": {
+    "/home/art/dev/c#/RazorPagesMovies/RazorPagesMovies.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\musli\\dev\\c#\\RazorPagesMovies\\RazorPagesMovies.csproj",
+        "projectUniqueName": "/home/art/dev/c#/RazorPagesMovies/RazorPagesMovies.csproj",
         "projectName": "RazorPagesMovies",
-        "projectPath": "C:\\Users\\musli\\dev\\c#\\RazorPagesMovies\\RazorPagesMovies.csproj",
-        "packagesPath": "C:\\Users\\musli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\musli\\dev\\c#\\RazorPagesMovies\\obj\\",
+        "projectPath": "/home/art/dev/c#/RazorPagesMovies/RazorPagesMovies.csproj",
+        "packagesPath": "/home/art/.nuget/packages/",
+        "outputPath": "/home/art/dev/c#/RazorPagesMovies/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\musli\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/art/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -83,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
         }
       }
     }
